@@ -1,0 +1,19 @@
+[package]
+name = "leakseek"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = {version="4.1.6",features=["derive"]}
+serde = {version="1.0.152",features=["derive"]}
+toml = "0.7.2"
+walkdir = "2.3.2"
+regex = "1.7.0"
+tokio = {version = "1",features=["full"]}
+fancy-regex = "0.11.0"
+rayon = "1.6.1"
+regex-split = "0.1.0"
+shannon-entropy = "1.0.0"
+serde_json = "1.0.93"
