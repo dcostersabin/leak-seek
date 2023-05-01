@@ -4,6 +4,9 @@ Leak Seek is written in Rust, which is a modern, high-performance programming la
 
 Overall, Leak Seek is a powerful tool for detecting and preventing hardcoded secrets in Git repositories, and can help organizations improve their overall security posture and reduce the risk of data breaches and other security incidents.
 
+![Leak Seek](https://github.com/dcostersabin/leak-seek/blob/develop/assets/leakseek.png)
+
+
 ## Getting Started
 
 Leak Seek can be installed using Rust. For now 
