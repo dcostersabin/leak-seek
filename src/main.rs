@@ -64,18 +64,21 @@ fn print_json(data: &Vec<Leak>) {
 fn main() {
     let cli = Cli::parse();
     match &cli.command {
-        Commands::Detect(path) => {
-            let dir_path = path.path.as_ref().unwrap();
-
-            if !cli.git {
-                let mut file_obj = FilePipeline::new(dir_path);
-                file_obj.start();
-                print_json(&file_obj.data);
-            } else {
-                let mut git_obj = GitPipeline::new(dir_path);
-                git_obj.start();
-                print_json(&git_obj.data);
+        Commands::Detect(args) => match args.path.as_ref() {
+            Some(dir_path) => {
+                if !cli.git {
+                    let mut file_obj = FilePipeline::new(dir_path);
+                    file_obj.start();
+                    print_json(&file_obj.data);
+                } else {
+                    let mut git_obj = GitPipeline::new(dir_path);
+                    git_obj.start();
+                    print_json(&git_obj.data);
+                }
             }
-        }
+            None => {
+                print!("Please Provide A Path")
+            }
+        },
     }
 }
